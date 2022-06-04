@@ -1,0 +1,29 @@
+* {
+	text-decoration: none;
+}
+
+body {
+	background-color: #222;
+	color: white;
+	overflow-x: hidden;
+}
+
+.nav {
+	background-color: #444;
+}
+
+.tab-header::before {
+	content: "";
+	position: absolute;
+	left: -5%;
+	top: 0;
+	border-bottom: #444 solid;
+	width: 110%;
+	height: 100%;
+	z-index: -1;
+	background: #222;
+}
+
+.bg-newdark{
+	background-color: #444;
+}
