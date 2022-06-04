@@ -27,3 +27,24 @@ body {
 .bg-newdark{
 	background-color: #444;
 }
+
+.jobcol{
+	background-color: rgba(255, 255, 255, 0.068);
+	font-size: x-large;
+	text-align: center;
+}
+
+.mlist{
+	font-size: 1.5em;
+	border: solid 2px gray;
+	border-radius: 2em;
+}
+.jlist{
+	font-size: 1.5em;
+	border: solid 2px gray;
+	border-radius: 0.5em;
+}
+
+.card {
+	background-color: rgb(141, 141, 141);
+}
