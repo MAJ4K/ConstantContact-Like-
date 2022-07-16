@@ -1,0 +1,20 @@
+{
+	"name" : "CCPWA",
+	"short_name" : "CCPWA",
+	"start_url" : ".",
+	"background_color" : "#222222",
+	"theme_color" : "pink",
+	"display" : "standalone",
+	"icons" : [
+		{
+			"src": "Images/appLogo180.png",
+			"sizes" : "180x180",
+			"type" : "image/png"
+		},
+		{
+			"src": "Images/appLogo512.png",
+			"sizes" : "512x512",
+			"type" : "image/png"
+		}
+	]
+}
