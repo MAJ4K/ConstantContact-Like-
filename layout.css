@@ -1,6 +1,8 @@
 :root{
 	--palette0: #222;
 	--palette1: palevioletred;
+	--palette3: #333;
+	--palette2: rgb(231, 157, 181);
 }
 * {
 	box-sizing: border-box;
@@ -29,10 +31,85 @@ body>nav{
 body>main{
 	grid-column: 1;
 	grid-row: 1;
+	overflow-y: scroll;
+	padding-bottom: 2.5em;
+}
+body>main>h1{
+	font-size: 3em;
+	padding: 0.1em;
+	border-bottom: solid var(--palette1) 0.1em;
+}
+
+#LISTS {
+	display: flex;
+	flex-direction: column;
+	justify-content: start;
+	align-items: center;
+	color: white;
+	text-align: center;
+}
+#list-content{
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	gap: 1em;
+}
+.list{
+	background-color: cadetblue;
+	min-width: 20em;
+	height: 5em;
+	border-radius: 3em;
+}
+.list:hover { background-color: aquamarine;}
+
+.addinput1{
+	background-color: var(--palette1);
+	display: flex;
+	flex-direction: row;
+	text-align: end;
+	justify-content: center;
+}
+.addinput1:hover {
+	background-color: var(--palette2);
+}
+
+.modal-container{
+	background-color: rgba(0, 0, 0, 0.5);
+	display: none;
+	align-items: center;
+	justify-content: center;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+}
+.modal-container.show{display: flex;}
+.modal{
+	background-color: var(--palette1);
+	padding: 0.5em 1em;
+	width: 40em;
+	max-width: 95vw;
+	border-radius: 2em;
+}
+.modal>h2{border-bottom: solid var(--palette0) 0.2em;}
+.modal>button{
+	background-color: var(--palette0);
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+}
+.modal>button:hover{ background-color: var(--palette3);}
+.btn {
+	margin: 0.5em;
+	padding: 0.5em;
+	border: none;
+	border-radius: 2em;
 }
 
 
-@media only screen and (min-width: 1200px) {
+@media only screen and (min-width: 1000px) {
 	body {
 		grid-template-columns: auto 1fr;
 	}

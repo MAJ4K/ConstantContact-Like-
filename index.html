@@ -13,11 +13,47 @@
 </head>
 <body>
 	<nav>
+		<div></div>
 		<a href="#JOBS">JOBS</a>
 		<a href="#TEMP">TEMPLATES</a>
 		<a href="#LIST">LISTS</a>
+		<div></div>
 	</nav>
-	<main></main>
+	<main id="LISTS">
+		<h1>Mailing Lists</h1>
+		<button class="addinput1 btn" id="ListOpen">
+			<img src="Images/plus.png">
+			<h2 style="font-size: 2.5em;">Add Lists</h2>
+		</button>
+		<div id="list-content">
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+			<div class="list">list</div>
+		</div>
+	</main>
+	<div class="modal-container" id="ListModal">
+		<div class="modal">
+			<h2>Create A Mailing List</h2>
+			<button class="btn"> Create a new table </button>
+			<button class="btn"> Upload a CSV & Convert to List </button>
+			<p>Import & Convert From:</p>
+			<button class="btn" id="authorize_button" onclick="handleAuthClick()">
+				<img src="Images/google.ico">
+			</button>
+			<button class="btn" id="signout_button" onclick="handleSignoutClick()">Authenticate</button>
+			<button class="btn" id="ListClose">CLOSE ME</button>
+		</div>
+	</div>
 </body>
-<script src="script.js"></script>
+<script defer src="script.js"></script>
+<script defer src="temp.js"></script>
+<script async defer src="https://apis.google.com/js/api.js" onload="gapiLoaded()"></script>
+<script async defer src="https://accounts.google.com/gsi/client" onload="gisLoaded()"></script>
 </html>
