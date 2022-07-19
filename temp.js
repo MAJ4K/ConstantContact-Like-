@@ -68,7 +68,6 @@ function maybeEnableButtons() {
  *  Sign in the user upon button click.
  */
 function handleAuthClick() {
-	console.log("clicking Auth")
 	tokenClient.callback = async (resp) => {
 	if (resp.error !== undefined) {
 		throw (resp);
@@ -77,7 +76,7 @@ function handleAuthClick() {
 	document.getElementById('authorize_button').innerText = 'Refresh';
 	await listConnectionNames();
 	};
-
+	console.log(gapi.client);
 	if (gapi.client.getToken() === null) {
 	// Prompt the user to select a Google Account and ask for consent to share their data
 	// when establishing a new session.
@@ -125,7 +124,7 @@ async function listConnectionNames() {
 	return;
 	}
 	// Flatten to string to display
-	console.log(connections)
+	var isEmail = '',isPhone = '';
 	const output = connections.reduce(
 		(str, person) => {
 		if (!person.names || person.names.length === 0) {
@@ -134,8 +133,9 @@ async function listConnectionNames() {
 		else if (!person.emailAddresses || person.emailAddresses.length === 0){
 			return `${str}${person.names[0].displayName}\n`;
 		}
+		isEmail = "EMAIL\t";
 		return `${str}${person.names[0].displayName}\t${person.emailAddresses[0].value}\n`;
-		},
-		'Connections:\n');
-	document.getElementById('list-content').innerText = output;
+		},"");
+		localStorage.setItem("gMail-contacts",'NAME\t'+ isEmail + isPhone +'\n' + output);
+		addList("gMail-contacts");
 }
