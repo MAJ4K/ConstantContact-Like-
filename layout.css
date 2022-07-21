@@ -1,0 +1,62 @@
+:root{
+	--palette0: black;
+	--palette1: rgb(66, 30, 30);
+}
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+body{
+	display: grid;
+	grid-template-rows: 1fr;
+	grid-template-columns: 1fr;
+	width: 100vw;
+	height: 100vh;
+	background-color: var(--palette0);
+}
+
+nav{
+	background-color: var(--palette1);
+	height: 4.5em;
+	grid-column: 1;
+	grid-row: 2;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+nav>a>img{display: none; height: 3.5em;}
+nav>a>img:first-of-type{display: block;}
+nav>a.active>img:first-of-type{display: none;}
+nav>a.active>img:last-of-type{display: block;}
+
+main{
+	grid-column: 1;
+	grid-row: 1;
+	display: none;
+}
+
+main.JOBS.active{}
+main.TEMP.active{
+	display: grid;
+	min-height: 100%;
+}
+main.LIST.active{}
+
+
+@media only screen and (min-width: 1000px) {
+	body {
+		grid-template-columns: auto 1fr;
+	}
+	body>nav{
+		width: 10em;
+		height: 100vh;
+		grid-column: 1;
+		grid-row: 1;
+	}
+	body>main{
+		grid-column: 2;
+		grid-row: 1;
+	}
+}
