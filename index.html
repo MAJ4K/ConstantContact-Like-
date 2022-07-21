@@ -11,23 +11,52 @@
 <body>
 <!-- NAV -->
 <nav>
-	<a class="JOBS">
+	<div></div>
+	<a class="JOBS" title="JOBS">
 		<img src="Images/navIcons/calendar.png" alt="">
 		<img src="Images/navIcons/calendar(1).png" alt="">
 	</a>
-	<a class="TEMP active">
+	<a class="TEMP active" title="TEMPLATES">
 		<img src="Images/navIcons/email.png" alt="">
 		<img src="Images/navIcons/email(1).png" alt="">
 	</a>
-	<a class="LIST">
+	<a class="LIST" title="MAILING LISTS">
 		<img src="Images/navIcons/people.png" alt="">
 		<img src="Images/navIcons/people(1).png" alt="">
 	</a>
+	<div></div>
 </nav>
 <!-- MAINS -->
-<main class="JOBS"></main>
-<main class="TEMP active"></main>
-<main class="LIST"></main>
+<main class="JOBS">
+	<button class="addthis">
+		<img src="Images/plus.png" alt="">
+		<p>Add Mailing Job</p>
+	</button>
+</main>
+<main class="TEMP active">
+	<div class="horizontal-flex" id="fav-sav">
+		<h3 class="FAVS active">FAVORITES</h3>
+		<h2>/</h2> <h3 class="SAVS">SAVED</h3>
+	</div>
+	<div id="fav-sav-cont">
+		<div class="FAVS horizontal-flex scrollX active">
+			<div class="doc" title="Fav"></div>
+		</div>
+		<div class="SAVS horizontal-flex scrollX">
+			<div class="doc" title="Sav"></div>
+		</div>
+	</div>
+	<button class="addthis">
+		<img src="Images/plus.png" alt="">
+		<p>Add Template</p>
+	</button>
+</main>
+<main class="LIST">
+	<button class="addthis">
+		<img src="Images/plus.png" alt="">
+		<p>Add Mailing List</p>
+	</button>
+</main>
 <!-- OTHER -->
 </body>
 <script defer src="script.js"></script>

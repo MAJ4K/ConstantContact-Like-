@@ -1,6 +1,7 @@
 :root{
-	--palette0: black;
-	--palette1: rgb(66, 30, 30);
+	--palette0: #111;
+	--palette1: darkorange;
+	--palette2: white;
 }
 * {
 	box-sizing: border-box;
@@ -15,8 +16,9 @@ body{
 	width: 100vw;
 	height: 100vh;
 	background-color: var(--palette0);
+	color: var(--palette2);
+	overflow: hidden;
 }
-
 nav{
 	background-color: var(--palette1);
 	height: 4.5em;
@@ -25,6 +27,17 @@ nav{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	align-items: center;
+	padding: 0.2em;
+}
+nav>a{cursor: pointer;}
+nav>a::after{
+	content: attr(title);
+	position: absolute;
+	display: inline;
+	left: 5em;
+	transform: translateX(-50%);
+	color: black;
 }
 nav>a>img{display: none; height: 3.5em;}
 nav>a>img:first-of-type{display: block;}
@@ -35,14 +48,64 @@ main{
 	grid-column: 1;
 	grid-row: 1;
 	display: none;
+	padding: 0.5em;
+	overflow-y: scroll;
 }
 
-main.JOBS.active{}
+main.JOBS.active{
+	display: grid;
+}
 main.TEMP.active{
 	display: grid;
-	min-height: 100%;
+	grid-template-rows: repeat(5,min-content);
 }
-main.LIST.active{}
+#fav-sav>h3{color: #555; cursor: pointer;}
+#fav-sav>h3.active{color: white;}
+#fav-sav-cont{width: 20em; border-bottom: var(--palette1) solid 0.3em;}
+#fav-sav-cont>*{display: none; overflow-y: hidden;}
+#fav-sav-cont>*.active{display: flex;}
+main.LIST.active{
+	display: grid;
+}
+
+.doc {
+	background-color: white;
+	min-width: 6em;
+	height: 8em;
+	margin-bottom: 1.1em;
+}
+.doc::after{
+	content: attr(title);
+	position: relative;
+	width: 100%;
+	top: 100%;
+}
+
+
+.addthis{
+	color:white;
+	background-color: transparent;
+	border: none;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	font-weight: bolder;
+	font-size: 2em;
+	cursor: pointer;
+}
+.addthis:hover{
+	background-image: linear-gradient(transparent,white);
+}
+.horizontal-flex{
+	display: flex;
+	flex-direction: row;
+	gap:1em;
+	text-align: center;
+	align-items: center;
+}
+.scrollX{overflow-x: scroll;}
+.scrollY{overflow-y: scroll;}
 
 
 @media only screen and (min-width: 1000px) {
@@ -54,6 +117,7 @@ main.LIST.active{}
 		height: 100vh;
 		grid-column: 1;
 		grid-row: 1;
+		flex-direction: column;
 	}
 	body>main{
 		grid-column: 2;
