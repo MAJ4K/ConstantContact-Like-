@@ -1,5 +1,5 @@
 :root{
-	--palette0: #111;
+	--palette0: #111111;
 	--palette1: maroon;
 	--palette2: white;
 }
@@ -106,6 +106,40 @@ main.LIST.active{
 	background-image: 
 		linear-gradient(transparent,white);
 }
+
+figure {display: none;}
+figure.active {
+	display: grid;
+	justify-content: center;
+	align-items: center;
+	position: absolute;
+	width: 100vw;
+	height: 100vh;
+	background-color: #000000cc;
+	color: black;
+}
+figure>div{
+	width: 35em;
+	max-width: 97vw;
+	height: 40em;
+	max-height: 97vh;
+	background-color: var(--palette1);
+	border-radius: 0.4em;
+}
+figure p{color: white;}
+figure h3 {border-top: solid var(--palette0) 0.12em;}
+
+#addJob>div {
+	display: grid;
+	grid-template-rows: min-content repeat(10,1fr);
+	grid-template-columns: min-content auto min-content;
+	text-align: center;
+}
+#addJob>div>*{grid-column: 1/-1;}
+#addJob>div>button,
+#addJob>div>h1
+{grid-column: span 1;}
+
 .horizontal-flex{
 	display: flex;
 	flex-direction: row;

@@ -28,7 +28,7 @@
 </nav>
 <!-- MAINS -->
 <main class="JOBS">
-	<button class="addthis">
+	<button class="addthis" onclick="tog('addJob')">
 		<img src="Images/plus.png" alt="">
 		<p>Add Mailing Job</p>
 	</button>
@@ -61,7 +61,7 @@
 			<div class="doc" title="Sav"></div>
 		</div>
 	</div>
-	<button class="addthis">
+	<button class="addthis" onclick="tog('addTemp')">
 		<img src="Images/plus.png" alt="">
 		<p>Add Template</p>
 	</button>
@@ -116,12 +116,51 @@
 	</div>
 </main>
 <main class="LIST">
-	<button class="addthis">
+	<button class="addthis" onclick="tog('addList')">
 		<img src="Images/plus.png" alt="">
 		<p>Add Mailing List</p>
 	</button>
 </main>
 <!-- OTHER -->
+<figure id="addJob">
+	<div>
+		<button onclick="tog('addJob')">quit</button>
+		<h1>Add Mailing Job</h1>
+		<button onclick="tog('addJob')">save</button>
+		<h3>Time</h3>
+		<p>Choose a Time</p>
+		<h3>People</h3>
+		<p>Choose a Mailing List</p>
+		<h3>Template</h3>
+		<p>Choose a Template</p>
+		<h3>Description</h3>
+		<p>description</p>
+	</div>
+</figure>
+<figure id="addTemp">
+	<div>
+		<button onclick="tog('addTemp')">quit</button>
+		<h1>Add Mailing Template</h1>
+		<div></div>
+		<button>Import From File</button>
+		<p>Or</p>
+		<button>Import From The Web</button>
+	</div>
+</figure>
+<figure id="addList">
+	<div>
+		<button onclick="tog('addList')">quit</button>
+		<h1>Add Mailing List</h1>
+		<div></div>
+		<button>Create Mailing List Table</button>
+		<p>Or</p>
+		<button>Upload CSV & Convert to List</button>
+		<p>Or Use</p>
+		<button>
+			<img src="Images/google.ico" alt="">
+		</button>
+	</div>
+</figure>
 </body>
 <script defer src="script.js"></script>
 </html>

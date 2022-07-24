@@ -26,6 +26,13 @@ function changeActive(id) {
 	}
 }
 
+function tog(id) {
+	const element = document.getElementById(id);
+	if (element.classList.contains('active'))
+		element.classList.remove('active');
+	else element.classList.add('active');
+}
+
 for (const btn of navbtns) {
 	btn.addEventListener('click', () => {
 		changeActive(btn.classList[0]);
