@@ -1,6 +1,6 @@
 :root{
 	--palette0: #111;
-	--palette1: darkorange;
+	--palette1: maroon;
 	--palette2: white;
 }
 * {
@@ -59,11 +59,19 @@ main.TEMP.active{
 	display: grid;
 	grid-template-rows: repeat(5,min-content);
 }
-#fav-sav>h3{color: #555; cursor: pointer;}
-#fav-sav>h3.active{color: white;}
-#fav-sav-cont{width: 20em; border-bottom: var(--palette1) solid 0.3em;}
+.temp-tabs>h3{color: #555; cursor: pointer;}
+.temp-tabs>h3.active{color: white;}
+
+#fav-sav-cont{
+	border-bottom: var(--palette1) solid 0.3em;
+	padding-top: 0.25em;
+	overflow-x: scroll;
+}
 #fav-sav-cont>*{display: none; overflow-y: hidden;}
-#fav-sav-cont>*.active{display: flex;}
+#fav-sav-cont>*.active{display: flex; flex-wrap: nowrap;}
+#temp-tab-cont{padding-top: 0.25em;}
+#temp-tab-cont>*{display: none;}
+#temp-tab-cont>*.active{display:flex;flex-wrap:wrap;}
 main.LIST.active{
 	display: grid;
 }
@@ -95,11 +103,13 @@ main.LIST.active{
 	cursor: pointer;
 }
 .addthis:hover{
-	background-image: linear-gradient(transparent,white);
+	background-image: 
+		linear-gradient(transparent,white);
 }
 .horizontal-flex{
 	display: flex;
 	flex-direction: row;
+	flex-wrap: wrap;
 	gap:1em;
 	text-align: center;
 	align-items: center;

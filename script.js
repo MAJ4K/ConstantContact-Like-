@@ -1,8 +1,19 @@
 const navbtns = document.getElementsByTagName('nav')[0]
 	.getElementsByTagName('a');
-const favSavs = document.getElementById('fav-sav')
-	.getElementsByTagName('h3');
+const tempTabs = findAllTheKids(
+	document.getElementsByClassName('temp-tabs'),
+	'h3'
+);
 
+function findAllTheKids(eArr,type) {
+	var value = [];
+	for (const element of eArr) {
+		for (const subelement of element.getElementsByTagName(type)) {
+			value.push(subelement);
+		}
+	}
+	return value;
+}
 
 function changeActive(id) {
 	const temps = document.getElementsByClassName(id);
@@ -20,7 +31,7 @@ for (const btn of navbtns) {
 		changeActive(btn.classList[0]);
 	});
 }
-for (const btn of favSavs) {
+for (const btn of tempTabs) {
 	btn.addEventListener('click', () => {
 		changeActive(btn.classList[0]);
 	});
