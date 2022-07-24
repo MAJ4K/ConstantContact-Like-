@@ -1,6 +1,7 @@
 :root{
 	--palette0: #111111;
-	--palette1: maroon;
+	--palette0a: #111111aa;
+	--palette1: darkcyan;
 	--palette2: white;
 }
 * {
@@ -21,21 +22,20 @@ body{
 }
 nav{
 	background-color: var(--palette1);
-	height: 4.5em;
+	height: 5em;
 	grid-column: 1;
 	grid-row: 2;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-around;
+	text-align: center;
 	align-items: center;
-	padding: 0.2em;
+	padding: 0.1em;
 }
-nav>a{cursor: pointer;}
 nav>a::after{
 	content: attr(title);
 	position: absolute;
 	display: inline;
-	left: 5em;
 	transform: translateX(-50%);
 	color: black;
 }
@@ -59,7 +59,7 @@ main.TEMP.active{
 	display: grid;
 	grid-template-rows: repeat(5,min-content);
 }
-.temp-tabs>h3{color: #555; cursor: pointer;}
+.temp-tabs>h3{color: #555;}
 .temp-tabs>h3.active{color: white;}
 
 #fav-sav-cont{
@@ -100,7 +100,6 @@ main.LIST.active{
 	justify-content: center;
 	font-weight: bolder;
 	font-size: 2em;
-	cursor: pointer;
 }
 .addthis:hover{
 	background-image: 
@@ -119,26 +118,55 @@ figure.active {
 	color: black;
 }
 figure>div{
+	display: grid;
+	grid-template-columns: min-content auto min-content;
 	width: 35em;
 	max-width: 97vw;
-	height: 40em;
+	height: min-content;
 	max-height: 97vh;
 	background-color: var(--palette1);
 	border-radius: 0.4em;
+	text-align: center;
+
 }
+figure>div>*{grid-column: 1/-1;}
+figure>div>.quit-btn,
+figure>div>h1 {grid-column: span 1;}
 figure p{color: white;}
 figure h3 {border-top: solid var(--palette0) 0.12em;}
-
-#addJob>div {
-	display: grid;
-	grid-template-rows: min-content repeat(10,1fr);
-	grid-template-columns: min-content auto min-content;
-	text-align: center;
+button.wide{
+	color: white;
+	margin: 1em 12.5%;
+	width: 75%;
+	font-size: xx-large;
+	font-weight: bolder;
+	border: 0.1em solid white;
+	border-radius: 0.2em;
+	background-color: transparent;
 }
-#addJob>div>*{grid-column: 1/-1;}
-#addJob>div>button,
-#addJob>div>h1
-{grid-column: span 1;}
+p.wide{
+	background-color: var(--palette0a);
+	color: var(--palette0a);
+	height: 0.2em;
+	width: 100%;
+}
+p.wide::after{
+	content: attr(title);
+	position: absolute;
+	transform: translate(-50%,-50%);
+	background-color: var(--palette1);
+	font-weight: bolder;
+	font-size: larger;
+}
+div.wide{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: space-around;
+	margin: 0.5em 12.5%;
+	width: 75%;
+}
+div.wide>*:hover{background-color: #ffffffaa;}
 
 .horizontal-flex{
 	display: flex;
@@ -150,12 +178,18 @@ figure h3 {border-top: solid var(--palette0) 0.12em;}
 }
 .scrollX{overflow-x: scroll;}
 .scrollY{overflow-y: scroll;}
+.btn,button{cursor: pointer;}
 
 
 @media only screen and (min-width: 1000px) {
 	body {
 		grid-template-columns: auto 1fr;
 	}
+
+nav>a::after{
+	left: 5em;
+	transform: translateX(-50%);
+}
 	body>nav{
 		width: 10em;
 		height: 100vh;

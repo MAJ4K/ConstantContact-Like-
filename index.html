@@ -12,15 +12,15 @@
 <!-- NAV -->
 <nav>
 	<div></div>
-	<a class="JOBS" title="JOBS">
+	<a class="JOBS btn" title="JOBS">
 		<img src="Images/navIcons/calendar.png" alt="">
 		<img src="Images/navIcons/calendar(1).png" alt="">
 	</a>
-	<a class="TEMP active" title="TEMPLATES">
+	<a class="TEMP btn active" title="TEMPLATES">
 		<img src="Images/navIcons/email.png" alt="">
 		<img src="Images/navIcons/email(1).png" alt="">
 	</a>
-	<a class="LIST" title="MAILING LISTS">
+	<a class="LIST btn" title="MAILING LISTS">
 		<img src="Images/navIcons/people.png" alt="">
 		<img src="Images/navIcons/people(1).png" alt="">
 	</a>
@@ -35,8 +35,8 @@
 </main>
 <main class="TEMP active">
 	<div class="temp-tabs horizontal-flex">
-		<h3 class="FAVS active">FAVORITES</h3>
-		<h2>/</h2> <h3 class="SAVS">SAVED</h3>
+		<h3 class="FAVS btn active">FAVORITES</h3>
+		<h2>/</h2> <h3 class="SAVS btn">SAVED</h3>
 	</div>
 	<div id="fav-sav-cont">
 		<div class="FAVS horizontal-flex scrollX active">
@@ -66,10 +66,10 @@
 		<p>Add Template</p>
 	</button>
 	<div class="temp-tabs horizontal-flex">
-		<h3 class="GREET active">GREETING</h3>
-		<h2>/</h2><h3 class="BUSS">BUSINESS</h3>
-		<h2>/</h2><h3 class="FORM">FORMAL</h3>
-		<h2>/</h2><h3 class="SERV">SERVEY</h3>
+		<h3 class="GREET btn active">GREETING</h3>
+		<h2>/</h2><h3 class="BUSS btn">BUSINESS</h3>
+		<h2>/</h2><h3 class="FORM btn">FORMAL</h3>
+		<h2>/</h2><h3 class="SERV btn">SERVEY</h3>
 	</div>
 	<div id="temp-tab-cont">
 		<div class="GREET horizontal-flex active">
@@ -124,9 +124,11 @@
 <!-- OTHER -->
 <figure id="addJob">
 	<div>
-		<button onclick="tog('addJob')">quit</button>
+		<img class="quit-btn btn" alt="quit"
+			onclick="tog('addJob')"
+			src="Images/navIcons/x.png">
 		<h1>Add Mailing Job</h1>
-		<button onclick="tog('addJob')">save</button>
+		<button class="quit-btn" onclick="tog('addJob')">save</button>
 		<h3>Time</h3>
 		<p>Choose a Time</p>
 		<h3>People</h3>
@@ -139,26 +141,30 @@
 </figure>
 <figure id="addTemp">
 	<div>
-		<button onclick="tog('addTemp')">quit</button>
+		<img class="quit-btn btn" alt="quit"
+			onclick="tog('addTemp')"
+			src="Images/navIcons/x.png">
 		<h1>Add Mailing Template</h1>
-		<div></div>
-		<button>Import From File</button>
-		<p>Or</p>
-		<button>Import From The Web</button>
+		<h1></h1>
+		<button class="wide">Import From File</button>
+		<p class="wide" title="Or"></p>
+		<button class="wide">Import From The Web</button>
 	</div>
 </figure>
 <figure id="addList">
 	<div>
-		<button onclick="tog('addList')">quit</button>
+		<img class="quit-btn btn" alt="quit"
+			onclick="tog('addList')"
+			src="Images/navIcons/x.png">
 		<h1>Add Mailing List</h1>
-		<div></div>
-		<button>Create Mailing List Table</button>
-		<p>Or</p>
-		<button>Upload CSV & Convert to List</button>
-		<p>Or Use</p>
-		<button>
-			<img src="Images/google.ico" alt="">
-		</button>
+		<h1></h1>
+		<button class="wide">Create From Table</button>
+		<p class="wide" title="Or"></p>
+		<button class="wide">Import From File</button>
+		<p class="wide" title="Or Use"></p>
+		<div class="wide btn-grid">
+			<img class="btn" src="Images/google.ico" alt="">
+		</div>
 	</div>
 </figure>
 </body>
